@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Guide to using the ecoengine R package</title>
+	<title>testdat - A test suite for csv files</title>
 	<meta name="description" content="Guide to using the ecoengine R package">
 	<meta name="author" content="Karthik Ram">
 	<meta name="viewport" content="width=1024, user-scalable=no">
@@ -42,9 +42,9 @@
 	<br><br><br>
 	<hgroup>
 	<img src="images/ropensci.png">
-	<center><h3><span style="color:#34495E; font-size:70px">A guide to using the Ecoengine package</span><i class="ss-globe"></i></h3><br><br>
+	<center><h3><span style="color:#34495E; font-size:70px">A unit testing package suite for tabular data</span><i class="ss-globe"></i></h3><br><br>
 	<h4> <a href="https://twitter.com/_inundata">@_inundata</a> &nbsp;<br>
-	karthik.github.io/eeguide	
+	karthik.github.io/testdat-talk	
 	</h4>
 	</center>
 	</hgroup>
@@ -59,21 +59,12 @@
 <br><br>
 <h2>Installing the package</h2>
 <!--begin.rcode installing,  eval = FALSE, message = FALSE, fig.align = 'center', cache = TRUE
-install.packages("ecoengine", dependencies = TRUE)
+install.packages("devtools", dependencies = TRUE)
+devtools::install_github("ropensci/testdat")
 # Requires R version 3.0.1 or higher
 end.rcode-->
 </section>
 
-
-<section class="slide" id="ecoengine_api">
-<br><br>
-<h2>The ecoengine API</h2>
-<!--begin.rcode basic, message = FALSE, fig.align = 'center'
-library(ecoengine)
-ee_about()
-    end.rcode-->
-   <a href="http://ecoengine.berkeley.edu/">More on the documentation</a>
-</section>
 
 
 <section class="slide" id="ecoengine_sources">
