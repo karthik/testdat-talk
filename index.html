@@ -63,21 +63,29 @@
 
 </section>
 
-<section class="slide" id="missing_NA_values">
+<section class="slide" id="missing_NA_values1">
 <br><br>
 <h2></h2>
-<div class="chunk" id="ee_sources"><div class="rcode">
-<div class="output"><pre class="knitr r">date num name
-  1  2014-01-01   1 NULL
-  2  2014-01-01   2  naa
-  3  2014-01-01   3  foo
-  4  2014-01-01   4  foo
-  5  2014-01-01   5  foo
-  6  2014-01-01   6  foo
-  7  2014-01-01   7  foo
-  8  2014-01-01   8  foo
-  9  2014-01-01 999  foo
-  10 2014-01-01 n/a  foo
+<div class="chunk" id="ee_sources"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(testdat)</span>
+<span class="hl std">dat</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">data.frame</span><span class="hl std">(</span>
+  <span class="hl kwc">date</span> <span class="hl std">=</span> <span class="hl kwd">rep</span><span class="hl std">(</span><span class="hl kwd">as.Date</span><span class="hl std">(</span><span class="hl str">&quot;2014-01-01&quot;</span><span class="hl std">),</span><span class="hl num">10</span><span class="hl std">),</span>
+  <span class="hl kwc">num</span> <span class="hl std">=</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">8</span><span class="hl std">,</span><span class="hl num">999</span><span class="hl std">,</span><span class="hl str">&quot;n/a&quot;</span><span class="hl std">),</span>
+  <span class="hl kwc">name</span> <span class="hl std">=</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;NULL&quot;</span><span class="hl std">,</span><span class="hl str">&quot;naa&quot;</span><span class="hl std">,</span><span class="hl kwd">rep</span><span class="hl std">(</span><span class="hl str">&quot;foo&quot;</span><span class="hl std">,</span><span class="hl num">8</span><span class="hl std">))</span>
+<span class="hl std">)</span>
+
+<span class="hl std">dat</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→           date num name
+→  1  2014-01-01   1 NULL
+→  2  2014-01-01   2  naa
+→  3  2014-01-01   3  foo
+→  4  2014-01-01   4  foo
+→  5  2014-01-01   5  foo
+→  6  2014-01-01   6  foo
+→  7  2014-01-01   7  foo
+→  8  2014-01-01   8  foo
+→  9  2014-01-01 999  foo
+→  10 2014-01-01 n/a  foo
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl kwd">find_NA</span><span class="hl std">(dat)</span>
 </pre></div>
