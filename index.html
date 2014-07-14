@@ -185,10 +185,18 @@
 <!-- =================== slide delimiter ================== -->
 
 <section class="slide" id="test_suite">
-<br><br><br>
-<blockquote> Setting up a test suite
+<h2>Setting up a test</h2>
+<div class="chunk" id="setup1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(testthat)</span>
+<span class="hl std">data_files</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">lapply</span><span class="hl std">(</span><span class="hl kwd">dir</span><span class="hl std">(</span><span class="hl kwc">pattern</span> <span class="hl std">=</span> <span class="hl str">&quot;*.csv&quot;</span><span class="hl std">), read.csv)</span>
+<span class="hl com"># Test these data files</span>
+<span class="hl kwd">context</span><span class="hl std">(</span><span class="hl str">&quot;checking for outliers&quot;</span><span class="hl std">)</span>
 
-</blockquote>
+<span class="hl kwd">test_that</span><span class="hl std">(</span><span class="hl str">&quot;data dont contain NAs&quot;</span><span class="hl std">, {</span>
+                 <span class="hl std">na_check</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">sapply</span><span class="hl std">(data_files, test_NA)</span>
+         <span class="hl kwd">expect_true</span><span class="hl std">(</span><span class="hl kwd">all</span><span class="hl std">(na_check</span> <span class="hl opt">==</span> <span class="hl num">TRUE</span><span class="hl std">))</span>
+         <span class="hl std">})</span>
+</pre></div>
+</div></div>
 </section>
 
 <!-- =================== slide delimiter ================== -->
