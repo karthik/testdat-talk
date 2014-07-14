@@ -12,7 +12,20 @@
     height: 100%;
     margin: 0 auto;
   }
+  
+  .home > article > .slide h1 {
+  font-family: "proxima-nova";
+  font-weight: 600;
+  font-size: 70px;
+  margin-bottom: 10px;
+  color: #3A3832;
+  /*KR*/
+  }
+
   .home > article > .slide h2 {
+  font-family: "proxima-nova";
+  font-weight: 600;
+  font-size: 62px;
     border-bottom: 0;
     padding-top: 0;
     margin: 0;
@@ -36,10 +49,10 @@
     -o-transform: translate(0, -50%);
     transform: translate(0, -50%);
   }
-  #intro h1 {
+ #intro h1 {
     position: static;
-    font-size: 84px;
-    font-weight: normal;
+    font-size: 100px;
+    font-weight: bold;
     margin: 0 0 8px 0;
     padding: 0 48px;
     -webkit-transform: none;
@@ -47,7 +60,9 @@
     -ms-transform: none;
     -o-transform: none;
     transform: none;
-    font-family: "UltraRegular", Georgia, sans-serif;
+    /*font-family: "UltraRegular", Georgia, sans-serif;*/
+    font-family: "soleil";
+    /*KR*/
     color: #000;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   }
@@ -364,9 +379,10 @@
   }
 
   #now-what > h2 {
-    font-family: "UltraRegular", Georgia, serif;
-    font-weight: normal;
-    font-size: 36px;
+    /*KR*/
+    font-family: "europa";
+    font-weight: 700;
+    font-size: 50px;
     padding: 42px 0 24px 0;
     color: #000;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
