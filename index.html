@@ -68,7 +68,7 @@
 </style>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Guide to using the ecoengine R package</title>
+	<title>testdat - A test suite for csv files</title>
 	<meta name="description" content="Guide to using the ecoengine R package">
 	<meta name="author" content="Karthik Ram">
 	<meta name="viewport" content="width=1024, user-scalable=no">
@@ -104,9 +104,9 @@
 	<br><br><br>
 	<hgroup>
 	<img src="images/ropensci.png">
-	<center><h3><span style="color:#34495E; font-size:70px">A guide to using the Ecoengine package</span><i class="ss-globe"></i></h3><br><br>
+	<center><h3><span style="color:#34495E; font-size:70px">A unit testing package suite for tabular data</span><i class="ss-globe"></i></h3><br><br>
 	<h4> <a href="https://twitter.com/_inundata">@_inundata</a> &nbsp;<br>
-	karthik.github.io/eeguide	
+	karthik.github.io/testdat-talk	
 	</h4>
 	</center>
 	</hgroup>
@@ -117,10 +117,15 @@
 <!--    ##############    slide delimiter  ##############    -->
 
 
+
+
+
 <section class="slide" id="installing_package">
 <br><br>
-<h2>Installing the package</h2>
-<div class="chunk" id="installing"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">install.packages</span><span class="hl std">(</span><span class="hl str">&quot;ecoengine&quot;</span><span class="hl std">,</span> <span class="hl kwc">dependencies</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
+<h2>Installing testdat</h2>
+
+<div class="chunk" id="installing"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">install.packages</span><span class="hl std">(</span><span class="hl str">&quot;devtools&quot;</span><span class="hl std">,</span> <span class="hl kwc">dependencies</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
+<span class="hl std">devtools::</span><span class="hl kwd">install_github</span><span class="hl std">(</span><span class="hl str">&quot;ropensci/testdat&quot;</span><span class="hl std">)</span>
 <span class="hl com"># Requires R version 3.0.1 or higher</span>
 </pre></div>
 </div></div>
@@ -128,438 +133,49 @@
 </section>
 
 
-<section class="slide" id="ecoengine_api">
-<br><br>
-<h2>The ecoengine API</h2>
-<div class="chunk" id="basic"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(ecoengine)</span>
-<span class="hl kwd">ee_about</span><span class="hl std">()</span>
-</pre></div>
-<div class="output"><pre class="knitr r">##        type                                        endpoint
-## 1 meta-data      http://ecoengine.berkeley.edu/api/sources/
-## 2 meta-data   http://ecoengine.berkeley.edu/api/footprints/
-## 3      data   http://ecoengine.berkeley.edu/api/checklists/
-## 4      data      http://ecoengine.berkeley.edu/api/sensors/
-## 5      data       http://ecoengine.berkeley.edu/api/vtmveg/
-## 6      data http://ecoengine.berkeley.edu/api/observations/
-## 7      data       http://ecoengine.berkeley.edu/api/photos/
-## 8   actions       http://ecoengine.berkeley.edu/api/search/
-</pre></div>
-</div></div>
-
-   <a href="http://ecoengine.berkeley.edu/">More on the documentation</a>
-</section>
-
 
 <section class="slide" id="ecoengine_sources">
 <br><br>
-<h2>Data sources in the API</h2>
-<div class="chunk" id="ee_sources"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">source_list</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_sources</span><span class="hl std">()</span>
-<span class="hl kwd">unique</span><span class="hl std">(source_list</span><span class="hl opt">$</span><span class="hl std">name)</span>
+<h2></h2>
+<div class="chunk" id="ee_sources"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(testdat)</span>
+<span class="hl std">dat</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">data.frame</span><span class="hl std">(</span>
+  <span class="hl kwc">date</span> <span class="hl std">=</span> <span class="hl kwd">rep</span><span class="hl std">(</span><span class="hl kwd">as.Date</span><span class="hl std">(</span><span class="hl str">&quot;2014-01-01&quot;</span><span class="hl std">),</span><span class="hl num">10</span><span class="hl std">),</span>
+  <span class="hl kwc">num</span> <span class="hl std">=</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">8</span><span class="hl std">,</span><span class="hl num">999</span><span class="hl std">,</span><span class="hl str">&quot;n/a&quot;</span><span class="hl std">),</span>
+  <span class="hl kwc">name</span> <span class="hl std">=</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;NULL&quot;</span><span class="hl std">,</span><span class="hl str">&quot;naa&quot;</span><span class="hl std">,</span><span class="hl kwd">rep</span><span class="hl std">(</span><span class="hl str">&quot;foo&quot;</span><span class="hl std">,</span><span class="hl num">8</span><span class="hl std">))</span>
+<span class="hl std">)</span>
+
+<span class="hl std">dat</span>
 </pre></div>
-<div class="output"><pre class="knitr r">##  [1] "LACM Vertebrate Collection"       
-##  [2] "MVZ Birds"                        
-##  [3] "MVZ Herp Collection"              
-##  [4] "MVZ Mammals"                      
-##  [5] "Wieslander Vegetation Map"        
-##  [6] "CAS Herpetology"                  
-##  [7] "Consortium of California Herbaria"
-##  [8] "UCMP Vertebrate Collection"       
-##  [9] "Sensor Data Qualifiers"           
-## [10] "Essig Museum of Entymology"
+<div class="output"><pre class="knitr r">→           date num name
+→  1  2014-01-01   1 NULL
+→  2  2014-01-01   2  naa
+→  3  2014-01-01   3  foo
+→  4  2014-01-01   4  foo
+→  5  2014-01-01   5  foo
+→  6  2014-01-01   6  foo
+→  7  2014-01-01   7  foo
+→  8  2014-01-01   8  foo
+→  9  2014-01-01 999  foo
+→  10 2014-01-01 n/a  foo
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">test_NA</span><span class="hl std">(dat)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→    row column value
+→  1   9      2   999
+→  2  10      2   n/a
+→  3   1      3  NULL
 </pre></div>
 </div></div>
-
 </section>
 
 
-<section class="slide" id="about_ee">
-<br><br>
-<h2>Retrieving observation data</h2>
-<div class="chunk" id="ee_obs1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">results</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">genus</span> <span class="hl std">=</span> <span class="hl str">&quot;Lynx&quot;</span><span class="hl std">,</span> <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl std">results</span>
-</pre></div>
-<div class="output"><pre class="knitr r">## [Total results]: 795 
-## [Args]: 
-## country = United States 
-## genus = Lynx 
-## georeferenced = FALSE 
-## page_size = 25 
-## page = 1 
-## [Type]: observations 
-## [Number of results]: 25
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-<section class="slide" id="ee_obs">
-<br><br>
-<h2>Retrieving multiple pages of data</h2>
-<div class="chunk" id="ee_obs"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">results</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">genus</span> <span class="hl std">=</span> <span class="hl str">&quot;Lynx&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">2</span><span class="hl std">,</span> <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl std">results</span>
-</pre></div>
-<div class="output"><pre class="knitr r">## [Total results]: 795 
-## [Args]: 
-## country = United States 
-## genus = Lynx 
-## georeferenced = FALSE 
-## page_size = 25 
-## page = 1 2 
-## [Type]: observations 
-## [Number of results]: 50
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-<section class="slide" id="pinus_example">
-<br><br>
-<h2>Retrieving data for a particular species</h2>
-<div class="chunk" id="pinus"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">pinus_observations</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">scientific_name</span> <span class="hl std">=</span> <span class="hl str">&quot;Pinus&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl std">,</span> <span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">,</span>
-    <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl std">pinus_observations</span>
-</pre></div>
-<div class="output"><pre class="knitr r">## [Total results]: 48333 
-## [Args]: 
-## country = United States 
-## scientific_name = Pinus 
-## georeferenced = FALSE 
-## page_size = 25 
-## page = 1 
-## [Type]: observations 
-## [Number of results]: 25
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-<section class="slide" id="more_examples">
-<h2>More examples of searches</h2>	
-<br><br>
-<div class="chunk" id="more_examples"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">animalia</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">kingdom</span> <span class="hl std">=</span> <span class="hl str">&quot;Animalia&quot;</span><span class="hl std">)</span>
-<span class="hl std">Artemisia</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">scientific_name</span> <span class="hl std">=</span> <span class="hl str">&quot;Artemisia douglasiana&quot;</span><span class="hl std">)</span>
-<span class="hl std">asteraceae</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observationss</span><span class="hl std">(</span><span class="hl kwc">family</span> <span class="hl std">=</span> <span class="hl str">&quot;asteraceae&quot;</span><span class="hl std">)</span>
-<span class="hl std">vulpes</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">genus</span> <span class="hl std">=</span> <span class="hl str">&quot;vulpes&quot;</span><span class="hl std">)</span>
-<span class="hl std">Anas</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">scientific_name</span> <span class="hl std">=</span> <span class="hl str">&quot;Anas cyanoptera&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl str">&quot;all&quot;</span><span class="hl std">)</span>
-<span class="hl std">loons</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">scientific_name</span> <span class="hl std">=</span> <span class="hl str">&quot;Gavia immer&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl str">&quot;all&quot;</span><span class="hl std">)</span>
-<span class="hl std">plantae</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">kingdom</span> <span class="hl std">=</span> <span class="hl str">&quot;plantae&quot;</span><span class="hl std">)</span>
-<span class="hl com"># grab first 10 pages (250 results)</span>
-<span class="hl std">plantae</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">kingdom</span> <span class="hl std">=</span> <span class="hl str">&quot;plantae&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">10</span><span class="hl std">)</span>
-<span class="hl std">chordata</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">phylum</span> <span class="hl std">=</span> <span class="hl str">&quot;chordata&quot;</span><span class="hl std">)</span>
-<span class="hl com"># Class is clss since the former is a reserved keyword in SQL.</span>
-<span class="hl std">aves</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">clss</span> <span class="hl std">=</span> <span class="hl str">&quot;aves&quot;</span><span class="hl std">)</span>
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-<section class="slide" id="ee_interactive_maps">
-<h2>Generate interactive maps with ecoengine</h2>	
-<br><br>
-<div class="chunk" id="map"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">lynx_data</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">genus</span> <span class="hl std">=</span> <span class="hl str">&quot;Lynx&quot;</span><span class="hl std">,</span> <span class="hl kwc">georeferenced</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl str">&quot;all&quot;</span><span class="hl std">,</span>
-    <span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
-<span class="hl kwd">ee_map</span><span class="hl std">(lynx_data)</span>
-</pre></div>
-</div></div>
-
-<a href="Ecoengine_species_map/Ecoengine_species_map.html"><img src="images/map.png"></a>
-</section>
-
-
-
-<section class="slide" id="sensors">
-<h2>Sensor data</h2>	
-<br><br>
-<div class="chunk" id="sensor_data"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">head</span><span class="hl std">(</span><span class="hl kwd">ee_list_sensors</span><span class="hl std">())</span>
-</pre></div>
-<div class="output"><pre class="knitr r">##            station_name                       units
-## 1          Angelo HQ WS Kilojoules per square meter
-## 2      Angelo Meadow WS      Watts per square meter
-## 3 Angelo HQ SF Eel Gage                     Percent
-## 4          Angelo HQ WS                      Degree
-## 5         Cahto Peak WS           Meters per second
-## 6      Angelo Meadow WS           Meters per second
-##                       variable                       method_name record
-## 1 Solar radiation total kj/m^2 Conversion to 30-minute timesteps   1625
-## 2  Solar radiation total w/m^2 Conversion to 30-minute timesteps   1632
-## 3            Rel humidity perc Conversion to 30-minute timesteps   1641
-## 4       Wind direction degrees Conversion to 30-minute timesteps   1644
-## 5            Wind speed avg ms Conversion to 30-minute timesteps   1651
-## 6            Wind speed max ms Conversion to 30-minute timesteps   1654
-</pre></div>
-</div></div>
-
-
-</section>
-
-
-<section class="slide" id="sensors_data">
-<h2>Sensor data</h2>	
-<br><br>
-<div class="chunk" id="sensor_data2"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl com"># First we can grab the list of sensor ids</span>
-<span class="hl std">sensor_ids</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_list_sensors</span><span class="hl std">()</span><span class="hl opt">$</span><span class="hl std">record</span>
-<span class="hl com"># In this case we just need data for sensor with id 1625</span>
-<span class="hl std">angelo_hq</span> <span class="hl kwb">&lt;-</span> <span class="hl std">sensor_ids[</span><span class="hl num">1</span><span class="hl std">]</span>
-<span class="hl std">results</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_sensor_data</span><span class="hl std">(angelo_hq,</span> <span class="hl kwc">page</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span> <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl std">results</span>
-</pre></div>
-<div class="output"><pre class="knitr r">## [Total results]: 56779 
-## [Args]: 
-## page_size = 25 
-## page = 2 
-## [Type]: sensor 
-## [Number of results]: 25
-</pre></div>
-</div></div>
-
-
-</section>
-<section class="slide" id="agg_sensor_data">
-<h2>Aggregated Sensor data</h2>	
-<br><br>
-<div class="chunk" id="agg_sensor_data"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">stations</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_list_sensors</span><span class="hl std">()</span>
-<span class="hl std">sensor_df</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_sensor_agg</span><span class="hl std">(</span><span class="hl kwc">sensor_id</span> <span class="hl std">= stations[</span><span class="hl num">1</span><span class="hl std">,</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;record&quot;</span><span class="hl std">)],</span> <span class="hl kwc">weeks</span> <span class="hl std">=</span> <span class="hl num">2</span><span class="hl std">,</span>
-    <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl kwd">head</span><span class="hl std">(sensor_df</span><span class="hl opt">$</span><span class="hl std">data)</span>
-</pre></div>
-<div class="output"><pre class="knitr r">##    begin_date  mean min   max   sum count
-## 2  2010-01-17 18.94   0 150.8  7613   402
-## 26 2010-01-31 17.03   0 237.7 11444   672
-## 3  2010-02-14 29.54   0 336.3 19852   672
-## 4  2010-02-28 42.08   0 402.5 28276   672
-## 5  2010-03-14 59.12   0 466.6 39730   672
-## 6  2010-03-28 93.55   0 490.6 62678   670
-</pre></div>
-</div></div>
-
-
-
-<img src= "images/plt.png">
-
-</section>
-
-
-<section class="slide" id="downloading_data">
-<h2>Downloading large amounts of data</h2>	
-<br><br>
-<div class="chunk" id="large_data"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">rodent_pages</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_pages</span><span class="hl std">(</span><span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">order</span> <span class="hl std">=</span> <span class="hl str">&quot;Rodentia&quot;</span><span class="hl std">,</span> <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">,</span>
-    <span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">))</span>
-<span class="hl std">page_breaks</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">split</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl opt">:</span><span class="hl std">rodent_pages,</span> <span class="hl kwd">ceiling</span><span class="hl std">(</span><span class="hl kwd">seq_along</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl opt">:</span><span class="hl std">rodent_pages)</span><span class="hl opt">/</span><span class="hl num">1000</span><span class="hl std">))</span>
-<span class="hl std">rodent_data</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">list</span><span class="hl std">()</span>
-<span class="hl com"># This step will take a while, as it downloads ~50 mb of data with pauses to</span>
-<span class="hl com"># avoid hammering API</span>
-<span class="hl kwa">for</span> <span class="hl std">(i</span> <span class="hl kwa">in</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl kwd">length</span><span class="hl std">(rodent_data)) {</span>
-    <span class="hl std">rodent_data</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">order</span> <span class="hl std">=</span> <span class="hl str">&quot;Rodentia&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">= page_breaks[[</span><span class="hl num">1</span><span class="hl std">]])</span>
-    <span class="hl kwd">write.csv</span><span class="hl std">(rodent_data</span><span class="hl opt">$</span><span class="hl std">data,</span> <span class="hl kwc">file</span> <span class="hl std">=</span> <span class="hl kwd">paste0</span><span class="hl std">(</span><span class="hl str">&quot;rodent_data&quot;</span><span class="hl std">, i,</span> <span class="hl str">&quot;.csv&quot;</span><span class="hl std">))</span>
-<span class="hl std">}</span>
-</pre></div>
-</div></div>
-
-<a href="https://gist.github.com/karthik/9197100">See full working example</a>
-</section>
-
-
-<section class="slide" id="downloading_data_alt">
-<h2>Downloading a large amount of data (a more elegant way)</h2>	
-<br><br>
-<div class="chunk" id="large_data2"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(plyr)</span>
-<span class="hl std">rodent_pages</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_pages</span><span class="hl std">(</span><span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">order</span> <span class="hl std">=</span> <span class="hl str">&quot;Rodentia&quot;</span><span class="hl std">,</span> <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">,</span>
-    <span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">))</span>
-<span class="hl std">page_breaks</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">split</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl opt">:</span><span class="hl std">rodent_pages,</span> <span class="hl kwd">ceiling</span><span class="hl std">(</span><span class="hl kwd">seq_along</span><span class="hl std">(</span><span class="hl num">1</span><span class="hl opt">:</span><span class="hl std">rodent_pages)</span><span class="hl opt">/</span><span class="hl num">1000</span><span class="hl std">))</span>
-<span class="hl std">results</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ldply</span><span class="hl std">(page_breaks,</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">) {</span>
-    <span class="hl std">results</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_pages</span><span class="hl std">(</span><span class="hl kwd">ee_observations</span><span class="hl std">(</span><span class="hl kwc">order</span> <span class="hl std">=</span> <span class="hl str">&quot;Rodentia&quot;</span><span class="hl std">,</span> <span class="hl kwc">page</span> <span class="hl std">= x,</span> <span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">))</span>
-    <span class="hl std">results</span><span class="hl opt">$</span><span class="hl std">data</span>
-<span class="hl std">},</span> <span class="hl kwc">.progress</span> <span class="hl std">=</span> <span class="hl str">&quot;text&quot;</span><span class="hl std">)</span>
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-
-<section class="slide" id="summarizing_data">
-<h2>Summarizing the results</h2>	
-<br><br>
-<div class="chunk" id="summaries"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(dplyr)</span>
-<span class="hl std">rodents_summary</span> <span class="hl kwb">&lt;-</span> <span class="hl std">rodents</span> <span class="hl opt">%.%</span> <span class="hl kwd">filter</span><span class="hl std">(</span><span class="hl opt">!</span><span class="hl kwd">is.na</span><span class="hl std">(year))</span> <span class="hl opt">%.%</span> <span class="hl kwd">group_by</span><span class="hl std">(</span><span class="hl kwc">state</span> <span class="hl std">= abbreviation,</span>
-    <span class="hl std">year)</span> <span class="hl opt">%.%</span> <span class="hl kwd">summarise</span><span class="hl std">(</span><span class="hl kwc">counts</span> <span class="hl std">=</span> <span class="hl kwd">n</span><span class="hl std">())</span>
-<span class="hl kwd">head</span><span class="hl std">(rodents_summary)</span>
-</pre></div>
-</div></div>
-
-<div class="chunk" id="show_some_results"><div class="rcode"><div class="output"><pre class="knitr r">##   State Year Counts
-## 1    CA 1818      9
-## 2    OR 1899     16
-## 3    CA 1904    178
-## 4    OR 1905     32
-## 5    CA 1905     18
-## 6    CA 1907     32
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-
-<section class="slide" id="chloropleths">
-<h2>Chloropleths</h2>	
-<div class="chunk" id="other"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rMaps)</span>
-<span class="hl std">rodents_summary</span> <span class="hl kwb">&lt;-</span> <span class="hl std">dplyr::</span><span class="hl kwd">filter</span><span class="hl std">(rodents_summary, Year</span> <span class="hl opt">&gt;</span> <span class="hl num">1899</span><span class="hl std">)</span>
-<span class="hl kwd">ichoropleth</span><span class="hl std">(Counts</span> <span class="hl opt">~</span> <span class="hl std">State,</span> <span class="hl kwc">data</span> <span class="hl std">= rodents_summary,</span> <span class="hl kwc">animate</span> <span class="hl std">=</span> <span class="hl str">&quot;Year&quot;</span><span class="hl std">,</span> <span class="hl kwc">pal</span> <span class="hl std">=</span> <span class="hl str">&quot;Reds&quot;</span><span class="hl std">,</span>
-    <span class="hl kwc">ncuts</span> <span class="hl std">=</span> <span class="hl num">4</span><span class="hl std">,</span> <span class="hl kwc">play</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
-</pre></div>
-</div></div>
-
-<a href="chloropleth_example.html"><img src = "images/chloropleth.png" target="_blank"></a>
-</section>
-
-
-
-<section class="slide" id="checklists">
-<h2>Checklist Data</h2>	
-<br><br>
-<div class="chunk" id="last"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">all_lists</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_checklists</span><span class="hl std">()</span>
-<span class="hl kwd">nrow</span><span class="hl std">(all_lists)</span>
-</pre></div>
-<div class="output"><pre class="knitr r">## [1] 57
-</pre></div>
-<div class="source"><pre class="knitr r"><span class="hl kwd">unique</span><span class="hl std">(all_lists</span><span class="hl opt">$</span><span class="hl std">subject)</span>
-</pre></div>
-<div class="output"><pre class="knitr r">##  [1] "Mammals"                  "Mosses"                  
-##  [3] "Beetles"                  "Spiders"                 
-##  [5] "Amphibians"               "Ants"                    
-##  [7] "Fungi"                    "Lichen"                  
-##  [9] "Plants"                   "Reptiles"                
-## [11] "Algae"                    "Arthropods"              
-## [13] "Liverworts"               "Birds"                   
-## [15] "Butterflies & Moths"      "Fish"                    
-## [17] "Bees"                     "Archaeognatha"           
-## [19] "Insects 1937-1955"        "Orthoptera and Cicadidae"
-## [21] "Butterflies"              "Aquatic Insects"         
-## [23] "Stoneflies"               "Caddisflies"             
-## [25] "whipworms"                "Tardigrades"             
-## [27] "Small Mammals"            "False Scorpions"         
-## [29] "Crane-flies"              "Chiggers"                
-## [31] "Cestodes"                 "Rodents"                 
-## [33] "Lichens"                  "Grasses and Forbes"      
-## [35] "Macroinvertebrates"       "Amphibians and Reptiles"
-</pre></div>
-</div></div>
-
-</section>
-
-
-<section class="slide" id="checklists_spiders">
-<h2>Looking through one subject in the checklist</h2>	
-<br><br>
-<div class="chunk" id="spiders"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">spiders</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_checklists</span><span class="hl std">(</span><span class="hl kwc">subject</span> <span class="hl std">=</span> <span class="hl str">&quot;Spiders&quot;</span><span class="hl std">)</span>
-<span class="hl std">spiders</span>
-</pre></div>
-<div class="output"><pre class="knitr r">##                  record
-## 4  bigcb:specieslist:15
-## 10 bigcb:specieslist:20
-##                                                         footprint
-## 4  http://ecoengine.berkeley.edu/api/footprints/hastings-reserve/
-## 10   http://ecoengine.berkeley.edu/api/footprints/angelo-reserve/
-##                                                                       url
-## 4  http://ecoengine.berkeley.edu/api/checklists/bigcb%3Aspecieslist%3A15/
-## 10 http://ecoengine.berkeley.edu/api/checklists/bigcb%3Aspecieslist%3A20/
-##                                           source subject
-## 4  http://ecoengine.berkeley.edu/api/sources/18/ Spiders
-## 10 http://ecoengine.berkeley.edu/api/sources/18/ Spiders
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-<section class="slide" id="checklists_spiders_download">
-<h2>Downloading complete checklist data</h2>	
-<br><br>
-<div class="chunk" id="spider_download"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(plyr)</span>
-<span class="hl std">spider_details</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ldply</span><span class="hl std">(spiders</span><span class="hl opt">$</span><span class="hl std">url, checklist_details)</span>
-<span class="hl kwd">names</span><span class="hl std">(spider_details)</span>
-</pre></div>
-<div class="output"><pre class="knitr r">##  [1] "url"                              "observation_type"                
-##  [3] "scientific_name"                  "collection_code"                 
-##  [5] "institution_code"                 "country"                         
-##  [7] "state_province"                   "county"                          
-##  [9] "locality"                         "coordinate_uncertainty_in_meters"
-## [11] "begin_date"                       "end_date"                        
-## [13] "kingdom"                          "phylum"                          
-## [15] "clss"                             "order"                           
-## [17] "family"                           "genus"                           
-## [19] "specific_epithet"                 "infraspecific_epithet"           
-## [21] "source"                           "remote_resource"                 
-## [23] "earliest_period_or_lowest_system" "latest_period_or_highest_system"
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-
-<section class="slide" id="photos">
-<h2>Search photos</h2>
-The engine has the full database of Cal photos.	
-<br><br>
-<div class="chunk" id="photos"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">photos</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_photos</span><span class="hl std">(</span><span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">,</span> <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl std">photos</span>
-</pre></div>
-<div class="output"><pre class="knitr r">## [Total results]: 43708 
-## [Args]: 
-## page_size = 25 
-## georeferenced = 0 
-## page = 1 
-## [Type]: photos 
-## [Number of results]: 25
-</pre></div>
-</div></div>
-
-</section>
-
-
-
-<section class="slide" id="photos_example">
-<h2>Browse photos</h2><br>	
-Quickly browse any photo search query with <code>view_photos()</code>
-<br>
-<div class="chunk" id="photo_viewer"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">poppys</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">ee_photos</span><span class="hl std">(</span><span class="hl kwc">scientific_name</span> <span class="hl std">=</span> <span class="hl str">&quot;Eschscholzia californica&quot;</span><span class="hl std">,</span> <span class="hl kwc">quiet</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">,</span>
-    <span class="hl kwc">progress</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl kwd">view_photos</span><span class="hl std">(poppys)</span>
-</pre></div>
-</div></div>
-
-<img src = "images/ecoengine_viewer.png">
-</section>
-
-
-<section class="slide" id="more_info">
-	<div>
-		<h2>Grab a PDF guide to the package</h2><br>
-		The vignette walks you through all of the functions available from the package and has a full set of examples.
-<a href="https://github.com/ropensci/ecoengine/blob/master/inst/Using_ecoengine.pdf?raw=true"><img src="images/pdf_ecoengine.png"></a>
-</div>
-</section>
 
 
 <!--    ##############    closing slide  ##############    -->
 <section class="slide" id="outro">
 	<div>
 	<hgroup>
-	<h1>ropensci.org/ecoengine</h1>
+	<h1>karthik.github.io/testdat-talk</h1>
 	<h2><a href="http://GitHub.com/ropensci"  style="color:#010101;"> ropensci on GitHub</a><br>
 	<a href="http://twitter.com/ropensci"  style="color:#79cef7;"> @ropensci on Twitter </a><br>
 	Questions or comments to: karthik dot ram at berkeley dot edu
@@ -665,20 +281,6 @@ Quickly browse any photo search query with <code>view_photos()</code>
       $.deck('.slide');
     })
   </script>
-     <!-- Gauges Analytics -->
-<script type="text/javascript">
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.type  = 'text/javascript';
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '500ebcf4613f5d79c700001c');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
 
 </body>
 </html>
