@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+46
+.cache/setup1_ac416e1571f99730a4be8bd0ba8c3924
+16
+1
+262153
+1099
+<div\040class=\"chunk\"\040id=\"setup1\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">context</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;checking\040for\040NAs&quot;</span><span\040class=\"hl\040std\">)</span>\n\n<span\040class=\"hl\040kwd\">test_that</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;data\040dont\040contain\040NAs&quot;</span><span\040class=\"hl\040std\">,\040{</span>\n<span\040class=\"hl\040std\">data_files</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">lapply</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwd\">dir</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">pattern</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;*.csv&quot;</span><span\040class=\"hl\040std\">),\040read.csv)</span>\n<span\040class=\"hl\040std\">na_check</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">sapply</span><span\040class=\"hl\040std\">(data_files,\040test_NA)</span>\n<span\040class=\"hl\040kwd\">expect_true</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwd\">all</span><span\040class=\"hl\040std\">(na_check))</span>\n<span\040class=\"hl\040std\">})</span>\n</pre></div>\n</div></div>
+254

@@ -79,6 +79,23 @@ end.rcode-->
 </section>
 
 
+<section class="slide" id="writing_tests">
+<br><br>
+<h2>Installing testdat</h2>
+<!--begin.rcode setup1, echo = TRUE, eval = FALSE, message = FALSE
+context("checking for NAs")
+
+test_that("data dont contain NAs", {
+data_files <- lapply(dir(pattern = "*.csv"), read.csv)
+na_check <- sapply(data_files, test_NA)
+expect_true(all(na_check))
+})
+end.rcode -->
+
+
+</section>
+
+
 
 <section class="slide" id="missing_NA_values">
 <br><br>
@@ -92,7 +109,7 @@ dat <- data.frame(
 )
 
 dat
-test_NA(dat)
+find_NA(dat)
 end.rcode-->
 </section>
 
@@ -109,6 +126,18 @@ clean_dat <- fix_NA(dat, custom_NAs="naa")
 clean_dat
 class(clean_dat$num)
 class(clean_dat$name)
+end.rcode-->
+</section>
+
+<section class="slide" id="column_types">
+<br><br>
+<h2></h2>
+<!--begin.rcode ee_source1s1, message = FALSE, fig.align = 'center', cache = TRUE
+dates
+missing values
+outliers
+spatial bounds
+mangled strings (inconsistent capitalization, abbreviated names, pairs of elements with low distance)
 end.rcode-->
 </section>
 
