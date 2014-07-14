@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+55
+.cache/spider_download_811dfe8b90e3fb8f4f66a91a2335f816
+16
+1
+262153
+741
+<div\040class=\"chunk\"\040id=\"spider_download\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">library</span><span\040class=\"hl\040std\">(plyr)</span>\n<span\040class=\"hl\040std\">spider_details</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ldply</span><span\040class=\"hl\040std\">(spiders</span><span\040class=\"hl\040opt\">$</span><span\040class=\"hl\040std\">url,\040checklist_details)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'spiders\'\040not\040found\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">names</span><span\040class=\"hl\040std\">(spider_details)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'spider_details\'\040not\040found\n</pre></div>\n</div></div>
+254

@@ -1,2 +1,2 @@
 slides:
-	Rscript -e "library(knitr); knit('index.Rhtml')"
+	Rscript -e "library(knitr); knit('working.Rhtml')"

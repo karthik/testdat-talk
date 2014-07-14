@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+51
+.cache/sensor_data_cd404194de9e82b46cec161bb21fc8f8
+16
+1
+262153
+362
+<div\040class=\"chunk\"\040id=\"sensor_data\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">head</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwd\">ee_list_sensors</span><span\040class=\"hl\040std\">())</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_list_sensors\"\n</pre></div>\n</div></div>
+254

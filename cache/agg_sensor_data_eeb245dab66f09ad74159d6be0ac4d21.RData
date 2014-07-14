@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+55
+.cache/agg_sensor_data_eeb245dab66f09ad74159d6be0ac4d21
+16
+1
+262153
+1483
+<div\040class=\"chunk\"\040id=\"agg_sensor_data\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">stations</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_list_sensors</span><span\040class=\"hl\040std\">()</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_list_sensors\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">sensor_df</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_sensor_agg</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">sensor_id</span>\040<span\040class=\"hl\040std\">=\040stations[</span><span\040class=\"hl\040num\">1</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwd\">c</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;record&quot;</span><span\040class=\"hl\040std\">)],</span>\040<span\040class=\"hl\040kwc\">weeks</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">2</span><span\040class=\"hl\040std\">,</span>\n\040\040\040\040<span\040class=\"hl\040kwc\">progress</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">FALSE</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_sensor_agg\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\">\040<span\040class=\"hl\040kwd\">head</span><span\040class=\"hl\040std\">(sensor_df</span><span\040class=\"hl\040opt\">$</span><span\040class=\"hl\040std\">data)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'sensor_df\'\040not\040found\n</pre></div>\n</div></div>
+254

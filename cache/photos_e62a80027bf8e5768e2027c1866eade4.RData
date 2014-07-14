@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+46
+.cache/photos_e62a80027bf8e5768e2027c1866eade4
+16
+1
+262153
+784
+<div\040class=\"chunk\"\040id=\"photos\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">photos</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_photos</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">quiet</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">TRUE</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">progress</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">FALSE</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_photos\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">photos</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'photos\'\040not\040found\n</pre></div>\n</div></div>
+254

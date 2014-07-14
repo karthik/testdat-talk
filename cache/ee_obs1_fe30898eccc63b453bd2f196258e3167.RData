@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+47
+.cache/ee_obs1_fe30898eccc63b453bd2f196258e3167
+16
+1
+262153
+812
+<div\040class=\"chunk\"\040id=\"ee_obs1\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">results</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_observations</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">genus</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;Lynx&quot;</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">progress</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">FALSE</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_observations\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">results</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'results\'\040not\040found\n</pre></div>\n</div></div>
+254

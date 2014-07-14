@@ -2,127 +2,58 @@
 <!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->  
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<style type="text/css">
-.knitr.inline {
-  background-color: #f7f7f7;
-  border:solid 1px #B0B0B0;
-}
-.error {
-	font-weight: bold;
-	color: #FF0000;
-},
-.warning {
-	font-weight: bold;
-}
-.message {
-	font-style: italic;
-}
-.source, .output, .warning, .error, .message {
-	padding: 0em 1em;
-  border:solid 1px #F7F7F7;
-}
-.source {
-  background-color: #f5f5f5;
-}
-.rimage.left {
-  text-align: left;
-}
-.rimage.right {
-  text-align: right;
-}
-.rimage.center {
-  text-align: center;
-}
-.hl.num {
-  color: #AF0F91;
-}
-.hl.str {
-  color: #317ECC;
-}
-.hl.com {
-  color: #AD95AF;
-  font-style: italic;
-}
-.hl.opt {
-  color: #000000;
-}
-.hl.std {
-  color: #585858;
-}
-.hl.kwa {
-  color: #295F94;
-  font-weight: bold;
-}
-.hl.kwb {
-  color: #B05A65;
-}
-.hl.kwc {
-  color: #55aa55;
-}
-.hl.kwd {
-  color: #BC5A65;
-  font-weight: bold;
-}
-</style>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>testdat - A test suite for csv files</title>
-	<meta name="description" content="Guide to using the ecoengine R package">
+	<title>csvconf --- testdat and the rOpenSci project</title>
+
+	<meta name="description" content="testdat and the rOpenSci project">
 	<meta name="author" content="Karthik Ram">
 	<meta name="viewport" content="width=1024, user-scalable=no">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<!-- Core and extension CSS files -->
-	<script src="//use.edgefonts.net/anonymous-pro.js"></script> 
-    <script src="http://use.edgefonts.net/quattrocento-sans.js"></script>
-    <script src="http://use.edgefonts.net/gentium-book-basic.js"></script>
-    <script src="//use.edgefonts.net/kotta-one.js"></script>
 	<link rel="stylesheet" href="core/deck.core.css">
 	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
 	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
 	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
 	<link rel="stylesheet" href="extensions/status/deck.status.css">
 	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
-	<link rel="stylesheet" href="extensions/automatic/deck.automatic.css">
-	<link rel="stylesheet" href="themes/style/barug.css">
-	<link rel="stylesheet" href="themes/transition/fade.css">
+	<!-- Additional style sheets  -->
+	<link rel="stylesheet" href="themes/style/useR14.css">
 	<link rel="stylesheet" href="themes/style/knitr.css">
+	<link rel="stylesheet" href="css/octicons/octicons.css">
+	<script type="text/javascript" src="//use.typekit.net/nmi3vtf.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script src="js/modernizr.custom.js"></script>
-
+	<link href="http://ropensci.org/talks/geolunch/ss-social/webfonts/ss-social.css" rel="stylesheet" />
+	<link href="http://ropensci.org/talks/geolunch/ss-standard/webfonts/ss-standard.css" rel="stylesheet"/>
 </head>
-
-
-
 
  <body class="deck-container">
 
-<!--    ##############    slide delimiter  ##############    -->
 
-<section class="slide" id="ropensci">
+<!-- ===================    slide 1    ================== -->
+
+<section class="slide" id="intro">
 	<div>
-	<br><br><br>
-	<hgroup>
-	<img src="images/ropensci.png">
-	<center><h3><span style="color:#34495E; font-size:70px">A unit testing package suite for tabular data</span><i class="ss-globe"></i></h3><br><br>
-	<h4> <a href="https://twitter.com/_inundata">@_inundata</a> &nbsp;<br>
-	karthik.github.io/testdat-talk	
-	</h4>
-	</center>
-	</hgroup>
+		<h1><span>Tools for<br></span> unit testing data <span class="kern">with</span> R</h1>
+        <h2><span>Karthik Ram</span></h2>
+
+		<p>
+		<a href="https://twitter.com/_inundata"><span class="download"> @_inundata</span></a>
+		</p>
 	</div>
 </section>
 
-
-<!--    ##############    slide delimiter  ##############    -->
-
-
-
+<!-- ===================    slide 1    ================== -->
 
 
 <section class="slide" id="installing_package">
 <br><br>
 <h2>Installing testdat</h2>
+
 
 <div class="chunk" id="installing"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">install.packages</span><span class="hl std">(</span><span class="hl str">&quot;devtools&quot;</span><span class="hl std">,</span> <span class="hl kwc">dependencies</span> <span class="hl std">=</span> <span class="hl num">TRUE</span><span class="hl std">)</span>
 <span class="hl std">devtools::</span><span class="hl kwd">install_github</span><span class="hl std">(</span><span class="hl str">&quot;ropensci/testdat&quot;</span><span class="hl std">)</span>
@@ -132,9 +63,7 @@
 
 </section>
 
-
-
-<section class="slide" id="ecoengine_sources">
+<section class="slide" id="missing_NA_values">
 <br><br>
 <h2></h2>
 <div class="chunk" id="ee_sources"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(testdat)</span>
@@ -169,56 +98,457 @@
 </section>
 
 
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="missing_NA_values">
+<br><br>
+<h2></h2>
+<div class="chunk" id="ee_sources1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">dat</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→           date num name
+→  1  2014-01-01   1 NULL
+→  2  2014-01-01   2  naa
+→  3  2014-01-01   3  foo
+→  4  2014-01-01   4  foo
+→  5  2014-01-01   5  foo
+→  6  2014-01-01   6  foo
+→  7  2014-01-01   7  foo
+→  8  2014-01-01   8  foo
+→  9  2014-01-01 999  foo
+→  10 2014-01-01 n/a  foo
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">test_NA</span><span class="hl std">(dat)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→    row column value
+→  1   9      2   999
+→  2  10      2   n/a
+→  3   1      3  NULL
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">class</span><span class="hl std">(dat</span><span class="hl opt">$</span><span class="hl std">num)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→  [1] "character"
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">class</span><span class="hl std">(dat</span><span class="hl opt">$</span><span class="hl std">name)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→  [1] "character"
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl std">clean_dat</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">fix_NA</span><span class="hl std">(dat,</span> <span class="hl kwc">custom_NAs</span><span class="hl std">=</span><span class="hl str">&quot;naa&quot;</span><span class="hl std">)</span>
+<span class="hl std">clean_dat</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→           date num name
+→  1  2014-01-01   1 <NA>
+→  2  2014-01-01   2 <NA>
+→  3  2014-01-01   3  foo
+→  4  2014-01-01   4  foo
+→  5  2014-01-01   5  foo
+→  6  2014-01-01   6  foo
+→  7  2014-01-01   7  foo
+→  8  2014-01-01   8  foo
+→  9  2014-01-01  NA  foo
+→  10 2014-01-01  NA  foo
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">class</span><span class="hl std">(clean_dat</span><span class="hl opt">$</span><span class="hl std">num)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→  [1] "numeric"
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">class</span><span class="hl std">(clean_dat</span><span class="hl opt">$</span><span class="hl std">name)</span>
+</pre></div>
+<div class="output"><pre class="knitr r">→  [1] "character"
+</pre></div>
+</div></div>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="small_data">
+<br><br><br>
+<blockquote> small data is just as sexy as big data
+
+</blockquote>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="test_datecol">
+<h2>Testing column types</h2>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="lens_browser">
+<br><br><br>
+<blockquote> Browse the results of unit tests with lens
+
+</blockquote>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="test_suite">
+<br><br><br>
+<blockquote> Setting up a test suite
+
+</blockquote>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="small_data">
+<br><br><br>
+<blockquote> Many researchers work with small data. 
+
+</blockquote>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="small_data">
+<br><br><br>
+<blockquote> Many researchers work with small data. 
+
+</blockquote>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="small_data">
+<br><br><br>
+<blockquote> Many researchers work with small data. 
+
+</blockquote>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="other_expectations">
+<br><br><br>
+<blockquote> Many researchers work with small data. 
+
+</blockquote>
+</section>
 
 
-<!--    ##############    closing slide  ##############    -->
-<section class="slide" id="outro">
+
+<!-- ===================    slide 1    ================== -->
+
+<section class="slide" id="intro">
 	<div>
-	<hgroup>
-	<h1>karthik.github.io/testdat-talk</h1>
-	<h2><a href="http://GitHub.com/ropensci"  style="color:#010101;"> ropensci on GitHub</a><br>
-	<a href="http://twitter.com/ropensci"  style="color:#79cef7;"> @ropensci on Twitter </a><br>
-	Questions or comments to: karthik dot ram at berkeley dot edu
-	<h2>To navigate this presentation, type <span style="color:#e64b65;font-style:bold; text-shadow: none"><b>M</a></span> to see all slides. <br><b><span style="color:#e64b65;font-style:bold; text-shadow: none"><b>G</a></span> to go to a specific slide</h2>
+		<h1><span>Fostering <br></span> open science <span class="kern">with</span> R</h1>
+        <h2><span>Karthik Ram</span></h2>
 
-</hgroup>
+
+	</div>
+</section>
+
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="what_is_reproducibility">
+<br><br><br>
+<blockquote> An article about [computational] science in a scientiﬁc publication is not the scholarship itself, it is merely advertising of the  scholarship. The actual scholarship is the <span style="background-color: #ebe455;">complete set of instructions [and data]</span> which generated the ﬁgures. 
+
+<br><br>- David Donoho (Stanford University)
+</blockquote>
+</section>
+
+<!-- 
+
+<section class="slide" id="research_paper_opaque">
+
+<h1>A published research paper</h1>
+</section>
+
+=================== slide delimiter ==================
+
+<section class="slide" id="research_paper_transparent">
+
+<h1>A published research paper: PDF + code + data + raw markup + statistical implementation...
+</h1>
+</section>
+ -->
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="paradigm">
+<h1>The way we do science is also changing</h1>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<!-- <section class="slide" id="what_is_open_science3">
+<h2>The three pillars of scientific practice</h2>
+<blockquote>Experimentation, theory and computing</blockquote>
+</section>
+ -->
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="what_is_open_science3a">
+<!-- TODO: Could use another span here	 -->
+<h2>The four pillars of scientific practice</h2>
+<blockquote>Experimentation, theory, computing, data-intensive</blockquote>
+<img src="images/4th_paradigm.jpg">
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="science_is_closed">
+<br><br>
+	<div>
+	<h1>How and where these data were obtained is often a black box <span style="color: #b22d28;"><i class="ss-lock"></i></span></h1>
+	</div>
+</section>
+
+
+<!-- =================== slide delimiter ================== -->
+<!-- 
+<section class="slide" id="open_science">
+<br><br>
+	<div>
+	<h1>Open Science <span style="color: #59c54a;"><i class="ss-unlock"></i></span></h1>
+	</div>	
+</section>
+ -->
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="reinhart_rogoff">
+	<br><br>
+<blockquote>Data and computer code should be made available at an early stage</blockquote>
+	<img src="images/reinhart_rogoff.png">
+	<a href="http://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646">Article</a>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="open_science_open_code">
+	<br>
+	<div>
+	<center><h2>Open data + code</h2></center>
+	<img src="images/openscience_opencode2.png" height="625" width="661">
+	<p>Source: <i class="ss-icon ss-link"><a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2486.2012.02693.x/abstract"> Wolkovich et al. Global Change Biology, 2012</a></i>.
+
+	</p>
+	</div>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="ropensci_main">
+<br><br>
+    <div>
+    <img src="images/ropensci.png" height="118" width="301">
+    <br><br>
+    <blockquote>Enable access  to scientific data repositories, full-text of articles, and science metrics and also <i>facilitate a culture shift in the scientific community.</i></blockquote>
+    </div>
+</section>
+
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="ropensci_packages">
+<br><br>
+	<div>
+	<img src="images/ropensci.png" height="118" width="301">
+	<br> <span style="font-size:165%; font-family:'Museo Sans'"><center>More info @ <span style="color:#3163a6;"><code>ropensci.org/packages</code></span></center></span><br>
+    <table  cellpadding="40" cellspacing="40">
+ <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td>
+		<img src="images/clear_line.png" height="1" width="250">
+<pre><img src="images/line_separator_blue.png"><span style="color:#669900; font-family:'Museo Sans'; font-size:110%"><i class="ss-icon ss-box"></i> Data</span>
+Treebase 
+Fishbase
+GBIF
+Dryad</pre><br></td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td>
+<img src="images/clear_line.png" height="1" width="250"><pre><img src="images/line_separator_red.png"><span style="color:#c4a12e; font-family:'Museo Sans'; font-size:105%"><i class="ss-icon ss-notebook"></i>&nbsp; Journals</span>
+PLOS
+Springer
+Mendeley
+textmine
+pensoft</pre>
+</td>
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td>
+		<img src="images/clear_line.png" height="1" width="250">
+<pre><img src="images/line_separator_purple.png"><span style="color:#5084B9; font-family:'Museo Sans'; font-size:110%"><i class="ss-icon ss-barchart"></i> Data Viz</span>
+rMaps
+plot.ly</pre><br></td>
+
+	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	<td><img src="images/clear_line.png" height="1" width="250"><pre><img src="images/line_separator_green.png"><span style="color:#e2460e; font-family:'Museo Sans'; font-size:105%"><i class="ss-icon ss-list"></i>&nbsp; Data Publication </span>figshare
+git2r
+rdat
+DataONE 
+rAltmetric
+EML</pre>
+</td>
+</tr>
+    </table>
+	</div>
+</section>
+
+<!-- =============================== -->
+<!--       Start Big Picture         -->
+<!-- =============================== -->
+
+<!-- <section class="slide" id="big_picture">
+<br>
+ <h2>Access to a variety of scientific data</h2>
+ <img src="images/museum_data.png">
+<h3>400+ million observation records<br> Full text 100k articles<br> Data from papers in &gt; 200 journals</h3>
+</section>
+
+ -->
+
+<!-- =================== slide delimiter ================== -->
+
+<!-- <section class="slide" id="data_dryad">
+<br><br>
+	<img src="images/dryad.png" height="119" width="107" align="left"><h2>Accessing data from papers - <code>rdryad</code></h2>
+<div class="chunk" id="foo"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rdryad)</span>
+<span class="hl kwd">library</span><span class="hl std">(dplyr)</span>
+<span class="hl std">data</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">download_url</span><span class="hl std">(</span><span class="hl str">&quot;10255/dryad.1759&quot;</span><span class="hl std">)</span> <span class="hl opt">%&gt;%</span> <span class="hl std">dryad_getfile</span>
+</pre></div>
+</div></div>
+
+<a href="http://datadryad.org/handle/10255/dryad.1759">Dataset</a>
+</section>
+
+ -->
+<!-- =================== slide delimiter ================== -->
+
+<!-- TODO: This slide needs to be pared down considerably -->
+<section class="slide" id="download_timeseries">
+<br><h2>  50+ years of fisheries data</h2>
+<div class="chunk" id="foo"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rfisheries)</span>
+<span class="hl kwd">library</span><span class="hl std">(dplyr)</span>
+<span class="hl std">who</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">c</span><span class="hl std">(</span><span class="hl str">&quot;TUX&quot;</span><span class="hl std">,</span> <span class="hl str">&quot;COD&quot;</span><span class="hl std">,</span> <span class="hl str">&quot;VET&quot;</span><span class="hl std">,</span> <span class="hl str">&quot;NPA&quot;</span><span class="hl std">)</span>
+<span class="hl com"># Four well known commercial fisheries</span>
+<span class="hl std">species_data</span> <span class="hl kwb">&lt;-</span> <span class="hl kwa">function</span><span class="hl std">(</span><span class="hl kwc">x</span><span class="hl std">)</span> <span class="hl kwd">of_landings</span><span class="hl std">(</span><span class="hl kwc">species</span> <span class="hl std">= x)</span>
+<span class="hl std">who</span> <span class="hl opt">%&gt;%</span> <span class="hl kwd">lapply</span><span class="hl std">(., species_data)</span> <span class="hl opt">%&gt;%</span> <span class="hl std">rbind_all</span>
+</pre></div>
+</div></div>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="rwbclimate">
+<h2>World Bank climate portal <code>rWBclimate</code></h2>
+<pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rWBclimate)</span>
+<span class="hl std">eu_basin</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">create_map_df</span><span class="hl std">(Eur_basin)</span>
+<span class="hl std">eu_basin_dat</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">get_ensemble_temp</span><span class="hl std">(Eur_basin,</span> <span class="hl str">&quot;annualanom&quot;</span><span class="hl std">,</span> <span class="hl num">2080</span><span class="hl std">,</span> <span class="hl num">2100</span><span class="hl std">)</span>
+</pre>
+<img src="images/rWBClimate.png">
+</section>
+
+<!-- ============================== -->
+<!--       Start data viz           -->
+<!-- ============================== -->
+
+<section class="slide" id="viz_data">
+<br>
+<div>
+<h2>Data Viz</h2>
+<img src="images/dataviz.png"> 
+<h3 class="viz_data">Interactively visualize and analyze data</h3><br>
 </div>
 </section>
 
-<!-- ============================================================================= -->
-<!-- ====      END PRESENTATION  ==== -->
-<!-- Everything below can be ignored (just js libraries) -->
-<!-- ============================================================================= -->
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="antweb_map">
+<br><h2>Taxon specific databases - AntWeb</h2>
+<div class="chunk" id="foo"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(AntWeb);</span> <span class="hl kwd">library</span><span class="hl std">(dplyr)</span>
+<span class="hl kwd">aw_data</span><span class="hl std">(</span><span class="hl kwc">genus</span> <span class="hl std">=</span> <span class="hl str">&quot;acanthognathus&quot;</span><span class="hl std">)</span> <span class="hl opt">%&gt;%</span> <span class="hl std">aw_map</span>
+</pre></div>
+</div></div>
+
+<img src="images/antweb_map.png">
+</section>
 
 
 
 
+<!-- =============================== -->
+<!--       Start Data Share          -->
+<!-- =============================== -->
+
+<section class="slide" id="share_data">
+<br><h2>Document and upload your data</h2>
+<img src="images/data-upload.png"> 
+<h3>Easily deposit data alongside analysis</h3>
+</section>
+
+<!-- =================== slide delimiter ================== -->
+
+<section class="slide" id="figshare">
+	<br><br>
+	<h2>Sharing data - <code>(rfigshare)</code></h2>
+	<div>
+	<h3 class="figshare">Using fig<b>share</b>'s API it is possible to share figures, data and any other objects generated in <code>R</code> and obtain a data citation.</h3><br>
+<div class="chunk" id="figshare"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rfigshare)</span>
+<span class="hl std">id</span> <span class="hl kwb">&lt;-</span> <span class="hl kwd">fs_create</span><span class="hl std">(</span><span class="hl str">&quot;Fisheries dataset&quot;</span><span class="hl std">,</span> <span class="hl str">&quot;A dataset containing catch for 4 important commercial fish species&quot;</span><span class="hl std">,</span><span class="hl str">&quot;dataset&quot;</span><span class="hl std">)</span>
+<span class="hl kwd">fs_upload</span><span class="hl std">(id,</span> <span class="hl str">&quot;dat.csv&quot;</span><span class="hl std">)</span>
+</pre></div>
+</div></div>
+
+</div>
+</section>
 
 
+<!-- =================== slide delimiter ================== -->
 
+<section class="slide" id="sample-flow2">
+	<!-- TODO: italicize this title -->
+<h1>&nbsp;</h1>
+</section>
 
+<!-- =================== slide delimiter ================== -->
 
+<section class="slide" id="writing_papers">
+<br><h2>The scientific workflow</h2>
+<img src="images/paper.png">
+</section>
 
+<!-- =================== slide delimiter ================== -->
 
+<section class="slide" id="writing_papers_new">
+<br><h2>The scientific workflow</h2>
+<img src="images/paper2.png">
+</section>
 
+<!-- =================== slide delimiter ================== -->
 
+<!-- <section class="slide" id="whats_next">
+	<br><br>
+	<h1>&nbsp;</h1>
+	</div>	
+</section>
+ -->
+<!-- =================== slide delimiter ================== -->
 
+<section class="slide" id="support">
+	<div>
+		<h1>Made possible by generous support from</h1>
+	</div>
+</section>
 
+<!-- =================== slide delimiter ================== -->
 
+<section class="slide" id="outro">
+	<div>
+		<hgroup>
+			<h1>ropensci.org</h1><br>
+			<h2>karthik.github.io/testdat-talk</h2>			
+			<h3>Type <b>M</b> for <i class="ss-grid"></i></span> and G to go to specific slide</h3>			
+		</hgroup>
+	</div>
+</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- ============================================================= -->
+<!-- ====               END PRESENTATION! 				 	  ==== -->
+<!--    Everything below can be ignored (just js libraries) 	   -->
+<!-- ============================================================= -->
 
 
 
@@ -247,40 +577,28 @@
 </form>
 
 <!-- deck.hash snippet -->
+<!-- TODO: Could lose this too? -->
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 
 
 <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
 <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
-<script>window.jQuery || document.write('<script src="jquery-1.7.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.7.min.js"><\/script>')</script>
 
 <!-- Deck Core and extensions -->
 <script src="core/deck.core.js"></script>
-<script src="extensions/hash/deck.hash.js"></script>
 <script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
 <script src="extensions/goto/deck.goto.js"></script>
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/blank/deck.blank.js"></script>
 
 <!-- Initialize the deck -->
-  <script>
-    $(function() {
-      $.extend(true, $.deck.defaults, {
-         automatic: {
-     			startRunning: true,
-     			cycle: false,
-     			slideDuration: 15000
-     		},
-     		classdata: {
-		      'bullet-point-timing': {
-		        duration: 100
-		      }
-		    }
-      });
-      $.deck('.slide');
-    })
-  </script>
-
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
 </body>
 </html>

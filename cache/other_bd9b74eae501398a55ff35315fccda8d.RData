@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+45
+.cache/other_bd9b74eae501398a55ff35315fccda8d
+16
+1
+262153
+1231
+<div\040class=\"chunk\"\040id=\"other\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">library</span><span\040class=\"hl\040std\">(rMaps)</span>\n<span\040class=\"hl\040std\">rodents_summary</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040std\">dplyr::</span><span\040class=\"hl\040kwd\">filter</span><span\040class=\"hl\040std\">(rodents_summary,\040Year</span>\040<span\040class=\"hl\040opt\">&gt;</span>\040<span\040class=\"hl\040num\">1899</span><span\040class=\"hl\040std\">)</span>\n<span\040class=\"hl\040kwd\">ichoropleth</span><span\040class=\"hl\040std\">(Counts</span>\040<span\040class=\"hl\040opt\">~</span>\040<span\040class=\"hl\040std\">State,</span>\040<span\040class=\"hl\040kwc\">data</span>\040<span\040class=\"hl\040std\">=\040rodents_summary,</span>\040<span\040class=\"hl\040kwc\">animate</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;Year&quot;</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">pal</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;Reds&quot;</span><span\040class=\"hl\040std\">,</span>\n\040\040\040\040\040\040\040\040<span\040class=\"hl\040kwc\">ncuts</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">4</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">play</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">TRUE</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n</div></div>
+254

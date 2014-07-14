@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+50
+.cache/installing_aa3d1dcf800368240404cda71f8aa0bc
+16
+1
+262153
+664
+<div\040class=\"chunk\"\040id=\"installing\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">install.packages</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;devtools&quot;</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">dependencies</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">TRUE</span><span\040class=\"hl\040std\">)</span>\n<span\040class=\"hl\040std\">devtools::</span><span\040class=\"hl\040kwd\">install_github</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;ropensci/testdat&quot;</span><span\040class=\"hl\040std\">)</span>\n<span\040class=\"hl\040com\">#\040Requires\040R\040version\0403.0.1\040or\040higher</span>\n</pre></div>\n</div></div>
+254

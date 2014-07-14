@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+47
+.cache/spiders_24001820e3d58866b43db04ca5267378
+16
+1
+262153
+683
+<div\040class=\"chunk\"\040id=\"spiders\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">spiders</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_checklists</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">subject</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;Spiders&quot;</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_checklists\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">spiders</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'spiders\'\040not\040found\n</pre></div>\n</div></div>
+254

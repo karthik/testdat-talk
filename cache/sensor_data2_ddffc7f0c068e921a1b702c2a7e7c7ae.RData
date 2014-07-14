@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+52
+.cache/sensor_data2_ddffc7f0c068e921a1b702c2a7e7c7ae
+16
+1
+262153
+1653
+<div\040class=\"chunk\"\040id=\"sensor_data2\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040com\">#\040First\040we\040can\040grab\040the\040list\040of\040sensor\040ids</span>\n<span\040class=\"hl\040std\">sensor_ids</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_list_sensors</span><span\040class=\"hl\040std\">()</span><span\040class=\"hl\040opt\">$</span><span\040class=\"hl\040std\">record</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_list_sensors\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040com\">#\040In\040this\040case\040we\040just\040need\040data\040for\040sensor\040with\040id\0401625\040</span>\n<span\040class=\"hl\040std\">angelo_hq</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040std\">sensor_ids[</span><span\040class=\"hl\040num\">1</span><span\040class=\"hl\040std\">]</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'sensor_ids\'\040not\040found\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">results</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_sensor_data</span><span\040class=\"hl\040std\">(angelo_hq,</span>\040<span\040class=\"hl\040kwc\">page</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">2</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">progress</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">FALSE</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_sensor_data\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">results</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'results\'\040not\040found\n</pre></div>\n</div></div>
+254

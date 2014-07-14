@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+43
+.cache/map_a143a06cdd6739f1da3423e8264969b0
+16
+1
+262153
+865
+<div\040class=\"chunk\"\040id=\"map\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">lynx_data</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_observations</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">genus</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;Lynx&quot;</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">georeferenced</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">TRUE</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">page</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;all&quot;</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">quiet</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">TRUE</span><span\040class=\"hl\040std\">)</span>\n<span\040class=\"hl\040kwd\">ee_map</span><span\040class=\"hl\040std\">(lynx_data)</span>\n</pre></div>\n</div></div>
+254

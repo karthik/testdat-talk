@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+50
+.cache/ee_sources_3805c381a4581f4eaace24bba9e6e7ed
+16
+1
+9
+2187
+<div\040class=\"chunk\"\040id=\"ee_sources\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">library</span><span\040class=\"hl\040std\">(testdat)</span>\n<span\040class=\"hl\040std\">dat</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">data.frame</span><span\040class=\"hl\040std\">(</span>\n\040\040<span\040class=\"hl\040kwc\">date</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040kwd\">rep</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwd\">as.Date</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;2014-01-01&quot;</span><span\040class=\"hl\040std\">),</span><span\040class=\"hl\040num\">10</span><span\040class=\"hl\040std\">),</span>\n\040\040<span\040class=\"hl\040kwc\">num</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040kwd\">c</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040num\">1</span><span\040class=\"hl\040opt\">:</span><span\040class=\"hl\040num\">8</span><span\040class=\"hl\040std\">,</span><span\040class=\"hl\040num\">999</span><span\040class=\"hl\040std\">,</span><span\040class=\"hl\040str\">&quot;n/a&quot;</span><span\040class=\"hl\040std\">),</span>\n\040\040<span\040class=\"hl\040kwc\">name</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040kwd\">c</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;NULL&quot;</span><span\040class=\"hl\040std\">,</span><span\040class=\"hl\040str\">&quot;naa&quot;</span><span\040class=\"hl\040std\">,</span><span\040class=\"hl\040kwd\">rep</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040str\">&quot;foo&quot;</span><span\040class=\"hl\040std\">,</span><span\040class=\"hl\040num\">8</span><span\040class=\"hl\040std\">))</span>\n<span\040class=\"hl\040std\">)</span>\n\n<span\040class=\"hl\040std\">dat</span>\n</pre></div>\n<div\040class=\"output\"><pre\040class=\"knitr\040r\">\342\206\222\040\040\040\040\040\040\040\040\040\040\040date\040num\040name\n\342\206\222\040\0401\040\0402014-01-01\040\040\0401\040NULL\n\342\206\222\040\0402\040\0402014-01-01\040\040\0402\040\040naa\n\342\206\222\040\0403\040\0402014-01-01\040\040\0403\040\040foo\n\342\206\222\040\0404\040\0402014-01-01\040\040\0404\040\040foo\n\342\206\222\040\0405\040\0402014-01-01\040\040\0405\040\040foo\n\342\206\222\040\0406\040\0402014-01-01\040\040\0406\040\040foo\n\342\206\222\040\0407\040\0402014-01-01\040\040\0407\040\040foo\n\342\206\222\040\0408\040\0402014-01-01\040\040\0408\040\040foo\n\342\206\222\040\0409\040\0402014-01-01\040999\040\040foo\n\342\206\222\040\04010\0402014-01-01\040n/a\040\040foo\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">test_NA</span><span\040class=\"hl\040std\">(dat)</span>\n</pre></div>\n<div\040class=\"output\"><pre\040class=\"knitr\040r\">\342\206\222\040\040\040\040row\040column\040value\n\342\206\222\040\0401\040\040\0409\040\040\040\040\040\0402\040\040\040999\n\342\206\222\040\0402\040\04010\040\040\040\040\040\0402\040\040\040n/a\n\342\206\222\040\0403\040\040\0401\040\040\040\040\040\0403\040\040NULL\n</pre></div>\n</div></div>
+254

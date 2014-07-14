@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+49
+.cache/summaries_5049ce74f3ee8e284059eabbbc2fef2e
+16
+1
+262153
+978
+<div\040class=\"chunk\"\040id=\"summaries\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040kwd\">library</span><span\040class=\"hl\040std\">(dplyr)</span>\n<span\040class=\"hl\040std\">rodents_summary</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040std\">rodents</span>\040<span\040class=\"hl\040opt\">%.%</span>\n<span\040class=\"hl\040kwd\">filter</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040opt\">!</span><span\040class=\"hl\040kwd\">is.na</span><span\040class=\"hl\040std\">(year))</span>\040<span\040class=\"hl\040opt\">%.%</span>\n<span\040class=\"hl\040kwd\">group_by</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">state</span>\040<span\040class=\"hl\040std\">=\040abbreviation,\040year)</span>\040<span\040class=\"hl\040opt\">%.%</span>\n<span\040class=\"hl\040kwd\">summarise</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">counts</span><span\040class=\"hl\040std\">=</span><span\040class=\"hl\040kwd\">n</span><span\040class=\"hl\040std\">())</span>\n<span\040class=\"hl\040kwd\">head</span><span\040class=\"hl\040std\">(rodents_summary)</span>\n</pre></div>\n</div></div>
+254

@@ -1,0 +1,16 @@
+RDA2
+A
+2
+196864
+131840
+1026
+1
+262153
+45
+.cache/pinus_3a4d17d374f3ec2b9594fb93e27302fa
+16
+1
+262153
+1102
+<div\040class=\"chunk\"\040id=\"pinus\"><div\040class=\"rcode\"><div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">pinus_observations</span>\040<span\040class=\"hl\040kwb\">&lt;-</span>\040<span\040class=\"hl\040kwd\">ee_observations</span><span\040class=\"hl\040std\">(</span><span\040class=\"hl\040kwc\">scientific_name</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040str\">&quot;Pinus&quot;</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">page</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">1</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">quiet</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">TRUE</span><span\040class=\"hl\040std\">,</span>\040<span\040class=\"hl\040kwc\">progress</span>\040<span\040class=\"hl\040std\">=</span>\040<span\040class=\"hl\040num\">FALSE</span><span\040class=\"hl\040std\">)</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040could\040not\040find\040function\040\"ee_observations\"\n</pre></div>\n<div\040class=\"source\"><pre\040class=\"knitr\040r\"><span\040class=\"hl\040std\">pinus_observations</span>\n</pre></div>\n<div\040class=\"error\"><pre\040class=\"knitr\040r\">##\040Error:\040object\040\'pinus_observations\'\040not\040found\n</pre></div>\n</div></div>
+254
