@@ -7,17 +7,7 @@ background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEf
 
 }
 
-/*
-Question: Not sure I'm using this;
-ul.bubbles li {
-  display: inline-block;
-  margin:  0 0.5rem 0.1em 0;
-}
 
-.desktop.only {
-  display: inline;
-}
-*/
 .download, .next, .cta {
   text-decoration: none;
   font-weight: bold;
