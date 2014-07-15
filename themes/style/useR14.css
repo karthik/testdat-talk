@@ -154,6 +154,23 @@ body > footer > p {
     text-shadow: none;
   }
 
+#what_testdat_does h3 {
+    position: static;
+    font-size: 50px;
+    color: #064865;
+    text-shadow: none;
+
+}
+
+#what_testdat_does2 h3 {
+    position: static;
+    font-size: 50px;
+    color: #064865;
+    text-shadow: none;
+
+}
+
+
 /*#ropensci_main h3 {
   position: static;
   font-size: 33px;
